@@ -1,23 +1,24 @@
 ﻿using HarmonyLib;
 
+
 namespace ChillieFirst
 {
-    [HarmonyPatch]
-    public static class LevelUpPatches
+    [HarmonyPatch(typeof(LevelUpMessage), "ShowMessage")]
+    public static class LevelUpMessagePatch
     {
-        [HarmonyPatch("LevelUpMessage", nameof(LevelUpMessage.ShowMessage))]
-        [HarmonyPrefix]
-        private static bool ShowMessagePrefix(ref string message)
+        private static bool Prefix(ref string message)
         {
-            Plugin.Log.LogInfo("ChillieLog - LevelUpMessage.ShowMessage is being called!");
-
             // Replace "Congratulations!" with "Chillieman!"
             if (!string.IsNullOrEmpty(message))
             {
+                
                 if (message.Contains("Congratulations!"))
                 {
                     message = message.Replace("Congratulations!", "Chillieman!");
-                    Plugin.Log.LogInfo("ChillieLog - Replaced 'Congratulations!' with 'Chillieman!' in level up message");
+                }
+                else
+                {
+                    message = "Chillieman! " + message;
                 }
             }
 
@@ -25,4 +26,29 @@ namespace ChillieFirst
             return true;
         }
     }
+
+    [HarmonyPatch(typeof(CharacterMovement), "HandleClickMovement")]
+    public static class CharacterMovementPatch
+    {
+        private static bool Prefix()
+        {
+            // Block movement clicks only when mod UI is visible
+            return !ChillieHelper.IsAnyUIShowing();
+        }
+    }
+
+    [HarmonyPatch(typeof(SkillManager), "StopAllSkills")]
+    public static class SkillManagerPatch
+    {
+        private static bool Prefix()
+        {
+            if (ChillieHelper.IsAnyUIShowing())
+            {
+                Plugin.Log.LogDebug("ChillieLog - Blocked StopAllSkills because Mod UI is open");
+                return false; // Prevent stopping skills when mod UI is visible
+            }
+            return true;
+        }
+    }
+
 }

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net46</TargetFramework>
     <AssemblyName>ChillieFirst</AssemblyName>
     <Description>My first plugin</Description>
     <Version>1.0.0</Version>
@@ -38,16 +38,18 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\lib\UnityEngine.dll</HintPath>
+      <HintPath>..\HelloChillie\lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\HelloChillie\lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
+      <Aliases>Core</Aliases>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>..\HelloChillie\lib\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
+      <Aliases>Engine</Aliases>
     </Reference>
   </ItemGroup>
 </Project>
