@@ -34,8 +34,7 @@ namespace ChillieFirst
                 {
                     if(item.GetName() == gameItem.itemName)
                     {
-                        item.SetTexture(gameItem.commonImage.texture);
-                        //item.SetIcon(gameItem.commonImage);
+                        item.SetIcon(gameItem.commonImage);
                     }
                 }
             }
@@ -133,10 +132,10 @@ namespace ChillieFirst
 
             GUILayout.BeginHorizontal(GUILayout.Height(38));
 
-            Texture2D texture = item.GetTeture();
-            if (texture != null)
+            Sprite icon = item.GetIcon();
+            if (icon != null)
             {
-                GUILayout.Label(texture, GUILayout.Width(32), GUILayout.Height(32));
+                GUILayout.Label(icon.texture, GUILayout.Width(32), GUILayout.Height(32));
             }
             else
             {
