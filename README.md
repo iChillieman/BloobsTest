@@ -3,4 +3,4 @@ Mic Check
 
 # The Build Issue:
 
-BloobsTest\Patches.cs(8,48,8,62): error CS0103: The name 'LevelUpMessage' does not exist in the current context
+Argument 1: cannot convert from 'UnityEngine.Sprite [C:\Users\chill\OneDrive\Desktop\mod\HelloChillie\lib\UnityEngine.CoreModule.dll]' to 'UnityEngine.Sprite [C:\Users\chill\.nuget\packages\unityengine.modules\5.6.0\lib\net45\UnityEngine.dll]'
