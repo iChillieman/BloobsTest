@@ -3,9 +3,9 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 
-namespace ChillieFirst
+namespace ChillieMod
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin("ChillieMod", "ChillieMod", "0.0.1")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -23,7 +23,7 @@ namespace ChillieFirst
             SelectedSkill = Config.Bind("General", "SelectedSkill", SkillType.None, "The skill to auto when idle");
             IdleThreshold = Config.Bind("General", "IdleThreshold", 60f, "Seconds of no XP before auto-skilling");
 
-            var harmony = new Harmony("com.chillieman.chilliefirst");
+            var harmony = new Harmony("com.chillieman.ChillieMod");
             harmony.PatchAll();
 
             ModUI.Create(IdleThreshold.Value);

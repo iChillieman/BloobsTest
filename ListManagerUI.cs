@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace ChillieFirst
+namespace ChillieMod
 {
     public class ListManagerUI : MonoBehaviour
     {
@@ -66,14 +66,14 @@ namespace ChillieFirst
             //Event.current.Use();
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), GUIContent.none);
 
-            windowRect = GUILayout.Window(69421, windowRect, DrawWindow, "ChillieFirst - Item Manager");
+            windowRect = GUILayout.Window(69421, windowRect, DrawWindow, "ChillieMod - Item Finder");
         }
 
         private void DrawWindow(int windowID)
         {
             GUILayout.BeginVertical(GUILayout.Width(530));
 
-            GUILayout.Label("📋 Item Manager", GUILayout.Height(30));
+            GUILayout.Label("📋 Item Finder", GUILayout.Height(30));
 
             // Search
             GUILayout.Label("Search:");

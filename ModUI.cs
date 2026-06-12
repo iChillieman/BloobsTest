@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ChillieFirst
+namespace ChillieMod
 {
     public class ModUI : MonoBehaviour
     {
@@ -71,14 +71,14 @@ namespace ChillieFirst
             // Also draw a full-screen blocker behind the window
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), GUIContent.none); // invisible full screen blocker
 
-            windowRect = GUILayout.Window(69420, windowRect, DrawWindow, "ChillieFirst - AFK Skiller");
+            windowRect = GUILayout.Window(69420, windowRect, DrawWindow, "ChillieMod - AFK Skiller");
         }
 
         private void DrawWindow(int windowID)
         {
             GUILayout.BeginVertical(GUILayout.Width(340));
 
-            GUILayout.Label("🛠 ChillieFirst AFK Skiller", GUILayout.Height(30));
+            GUILayout.Label("🛠 ChillieMod AFK Skiller", GUILayout.Height(30));
 
             GUILayout.Space(10);
 

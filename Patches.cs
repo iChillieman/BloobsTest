@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 
 
-namespace ChillieFirst
+namespace ChillieMod
 {
     [HarmonyPatch(typeof(LevelUpMessage), "ShowMessage")]
     public static class LevelUpMessagePatch

@@ -1,9 +1,7 @@
-﻿extern alias Core;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace ChillieFirst
+namespace ChillieMod
 {
     public class ChillieItem(SkillType skillType, string name, int requiredLevel)
     {
@@ -65,7 +63,7 @@ namespace ChillieFirst
             list.Add(new ChillieItem(SkillType.Foraging, "White Bloobberries", 40));
             list.Add(new ChillieItem(SkillType.Foraging, "Clover", 44));
             list.Add(new ChillieItem(SkillType.Foraging, "Golden Chestnutcap", 45));
-            list.Add(new ChillieItem(SkillType.Foraging, "Softeve", 48));
+            list.Add(new ChillieItem(SkillType.Foraging, "Softeye", 48));
             list.Add(new ChillieItem(SkillType.Foraging, "Purple Bloobberries", 50));
             list.Add(new ChillieItem(SkillType.Foraging, "Amethyst Glowstalk", 55));
             list.Add(new ChillieItem(SkillType.Foraging, "Yellow Comb", 58));
